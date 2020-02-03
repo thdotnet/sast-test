@@ -15,7 +15,6 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with dotnet
       run: dotnet build --configuration Release
-    - name: sast-scan
-      uses: AppThreat/sast-scan-action@master
-      with:
-        type: "python"
+    - name: Secret Scan
+      uses: max/secret-scan@1.0.0
+
