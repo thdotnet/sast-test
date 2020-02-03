@@ -15,3 +15,12 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with dotnet
       run: dotnet build --configuration Release
+    - name: sast-scan
+      uses: AppThreat/sast-scan-action@1.0.2
+      with:
+        # Source directory to scan. Defaults to workspace
+        src: # optional, default is /github/workspace
+        # Output directory for the generated reports. Defaults to reports
+        output: # optional, default is /github/workspace/reports
+        # Project type. Eg: java, python, nodejs. Comma separated values allowed.
+        type: # optional
